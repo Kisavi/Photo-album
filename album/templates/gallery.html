@@ -6,13 +6,39 @@
             <div class="card my-3" style="width: 22rem;">
                 <img src="https://media.istockphoto.com/photos/villefranche-on-sea-in-evening-picture-id1145618475?k=20&m=1145618475&s=612x612&w=0&h=_mC6OZt_eWENYUAZz3tLCBTU23uvx5beulDEZHFLsxI="
                      class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body photo-footer">
                     <p class="card-title">Category: Travel</p>
-                    <a href="#" class="btn btn-outline-dark btn-sm">View picture</a>
+
+                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                        View picture
+                    </button>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <!--    modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 50rem;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://media.istockphoto.com/photos/villefranche-on-sea-in-evening-picture-id1145618475?k=20&m=1145618475&s=612x612&w=0&h=_mC6OZt_eWENYUAZz3tLCBTU23uvx5beulDEZHFLsxI="
+                         class="card-img-top">
+                    <hr>
+                    <p><b>Description:</b></p>
+                    <p><b>Location:</b></p>
+                    <p><b>Date:</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
 
