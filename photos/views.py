@@ -6,7 +6,7 @@ def gallery(request):
     return render(request, 'photos/templates/gallery.html')
 
 
-def viewPhoto(request):
+def viewPhoto(request, pk):
     return render(request, 'photos/templates/photo.html')
 
 
