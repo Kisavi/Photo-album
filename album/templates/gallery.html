@@ -19,32 +19,32 @@
                 </div>
             </div>
         </div>
+
+
+        <!--    modal-->
+        <div class="modal fade" id="exampleModal{{pic.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" style="width: 50rem;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{pic.category}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{pic.image.url}}"
+                             class="card-img-top">
+                        <hr>
+                        <p><b>Description:</b> {{pic.description}}</p>
+                        <p><b>Location:</b></p>
+                        <p><b>Date:</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% empty %}
         <h3>No photos to display</h3>
         {% endfor %}
     </div>
-
-    <!--    modal-->
-    <div class="modal fade" id="exampleModal{{pic.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" style="width: 50rem;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><b>Category: </b>{{pic.category}}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{pic.image.url}}"
-                         class="card-img-top">
-                    <hr>
-                    <p><b>Description:</b>{{pic.description}}</p>
-                    <p><b>Location:</b></p>
-                    <p><b>Date:</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 {% endblock %}
 
