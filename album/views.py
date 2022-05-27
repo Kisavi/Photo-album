@@ -9,5 +9,9 @@ def gallery(request):
     return render(request, 'gallery.html', {'categories': categories, 'pics': pics})
 
 
+def searchCategory(request):
+    return render(request, 'searched.html')
+
+
 def uploadPhoto(request):
     return render(request, 'upload.html')
