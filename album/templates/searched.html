@@ -2,7 +2,8 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {%for pic in pics%}
+        {% if searched %}
+        {% for pic in search_results %}
         <div class="col-md-4">
             <div class="card my-3" style="width: 22rem;">
                 <img src="{{pic.image.url}}"
@@ -19,7 +20,6 @@
                 </div>
             </div>
         </div>
-
 
         <!--    modal-->
         <div class="modal fade" id="exampleModal{{pic.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -41,9 +41,11 @@
                 </div>
             </div>
         </div>
-        {% empty %}
-        <h3>No photos to display</h3>
         {% endfor %}
+
+        {% else %}
+        <h1>Enter a category</h1>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

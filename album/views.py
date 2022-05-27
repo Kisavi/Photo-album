@@ -10,7 +10,12 @@ def gallery(request):
 
 
 def searchCategory(request):
-    return render(request, 'searched.html')
+    if request.method == 'POST':
+        searched = request.POST.get('searched')
+        search_results = Picture.objects.filter(category__name=searched.title())
+        return render(request, 'searched.html', {'searched': searched, 'search_results': search_results})
+    else:
+        return render(request, 'searched.html')
 
 
 def uploadPhoto(request):
