@@ -1,7 +1,8 @@
 {% block styles%}
-.photo-footer {
-display: flex;
-justify-content: space-between;
+body {
+background: #ebebeb;
 }
-
+.navbar {
+background: #dbdbdb;
+}
 {% endblock %}
