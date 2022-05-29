@@ -5,4 +5,19 @@ background: #ebebeb;
 .navbar {
 background: #dbdbdb;
 }
+
+.flex {
+display:flex !important;
+flex-direction: column !important;
+
+}
+
+.loc{
+color: black;
+text-decoration: none;
+}
+
+.loc:hover {
+color: blue;
+}
 {% endblock %}

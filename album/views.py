@@ -18,5 +18,8 @@ def searchCategory(request):
         return render(request, 'searched.html')
 
 
-def uploadPhoto(request):
-    return render(request, 'upload.html')
+def searchLocation(request):
+    location = request.GET.get('location')
+    searched_location = Picture.objects.filter(location__name=location)
+    locations = Location.objects.all()
+    return render(request, 'location.html', {'locations': locations, 'searched_location': searched_location})

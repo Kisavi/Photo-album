@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
+    <center class="mt-2">
+       
+        {% for location in locations %}
+        <div class="d-inline me-3">
+            <a class="loc" aria-current="page"
+               href="{% url 'location' %}?location={{location.name}}">{{location.name}}</a>
+        </div>
+        {% endfor %}
+    </center>
     <div class="row">
-        {% if searched %}
-        <h4 class="text-center text-muted mt-3">{{search_results|length}} search results</h4>
-        {% for pic in search_results %}
+        <h4 class="text-center text-muted mt-3">{{searched_location|length}} search results</h4>
+        {% for pic in searched_location %}
         <div class="col-md-4">
             <div class="card my-3" style="width: 22rem;">
                 <img src="{{pic.image.url}}"
@@ -44,9 +52,6 @@
         </div>
         {% endfor %}
 
-        {% else %}
-        <h1 class="text-center my-4">Enter a category...</h1>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
