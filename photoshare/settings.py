@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'album.apps.AlbumConfig',
-    'cloudinary',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -124,10 +124,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-cloudinary.config(
-    cloud_name="dcf9cfqdg",
-    api_key="485474568258438",
-    api_secret="o03PSX1St6Swn1vR6kGwjaaBr-8"
-)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAZUFLNGCV4JZ2JR7Z'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'picxels'
