@@ -23,9 +23,28 @@ class Picture(models.Model):
     image = models.ImageField(null=False, blank=False)
     description = models.TextField(max_length=500, null=False, blank=False)
 
-    def save_image(self):
+    def save_picture(self):
         self.save()
         return self
 
-    def delete_image(self):
+    @classmethod
+    def update_picture(cls, pic):
+        picture = cls.get_picture_by_id(pic.id)
+        picture.category = pic.category
+        picture.location = pic.location
+        picture.image = pic.image
+        picture.description = pic.description
+        picture.save_picture()
+
+    def delete_picture(self):
         self.delete()
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.get(id=id)
+        return image
+
+    @classmethod
+    def search_image(cls, category):
+        images = cls.objects.filter(category__name__icontains=category)
+        return images
