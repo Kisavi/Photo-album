@@ -22,3 +22,10 @@ class Picture(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(null=False, blank=False)
     description = models.TextField(max_length=500, null=False, blank=False)
+
+    def save_image(self):
+        self.save()
+        return self
+
+    def delete_image(self):
+        self.delete()
